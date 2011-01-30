@@ -31,7 +31,7 @@ class FilenameParser
   private
 
   def execute_commands(movie, filename)
-    genre          = movie.genres.first
+    genre          = GenrePicker.new.order(movie.genres).first
     title_and_year = movie.imdb_title + " " + movie.year
     ext            = File.extname(filename)
     path           = File.dirname(filename)
