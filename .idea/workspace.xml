@@ -42,10 +42,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filename_parser.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="filename_parser.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/filename_parser.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="0" selection-start="2364" selection-end="2364" vertical-scroll-proportion="1.141994">
+            <state line="24" column="36" selection-start="473" selection-end="473" vertical-scroll-proportion="-3.1111112">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="13" selection-start="205" selection-end="205" vertical-scroll-proportion="0.2900302">
               <folding />
             </state>
           </provider>
@@ -77,6 +86,7 @@
         <option value="$PROJECT_DIR$/lib/run.rb" />
         <option value="$PROJECT_DIR$/spec/file_parser_spec.rb" />
         <option value="$PROJECT_DIR$/lib/filename_parser.rb" />
+        <option value="$PROJECT_DIR$/README" />
       </list>
     </option>
   </component>
@@ -193,6 +203,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
   </component>
   <component name="RunManager" selected="Ruby.file_parser_spec">
     <configuration default="false" name="file_parser_spec" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
@@ -513,7 +524,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/filename_parser.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="2364" selection-end="2364" vertical-scroll-proportion="1.141994">
+        <state line="24" column="36" selection-start="473" selection-end="473" vertical-scroll-proportion="-3.1111112">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="205" selection-end="205" vertical-scroll-proportion="0.2900302">
           <folding />
         </state>
       </provider>
