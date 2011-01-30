@@ -1,4 +1,3 @@
-
 require 'lib/imdb_movie'
 
 class FilenameParser
@@ -15,46 +14,39 @@ class FilenameParser
     [title.strip, year.strip]
   end
 
-  def initialize
-
-  end
-
   def parse_files(src_dir)
-
     src_dir ||= 'spec/fixtures'
     files   = Dir.glob("#{src_dir}/*")
     files.each do |filename|
-
-      puts "\n\n---------------------\n"
-      puts "Processing: '#{File.basename(filename)}'"
-
+      puts "\n\nProcessing file: '#{File.basename(filename)}'"
       movie = get_movie(filename)
       if !movie
-        puts "Couldn't find this movie in imdb, moving to next"
+        puts "Couldn't process this movie, moving to next."
         next
       end
-      genre          = movie.genres.first
-      rating         = movie.rating
-      title          = movie.imdb_title
-      year           = movie.year
-      title_and_year = title + " " + year
+      execute_commands(movie, filename)
+    end
+  end
 
-      ext            = File.extname(filename)
-      path           = File.dirname(filename)
+  private
 
-      puts "About to enter the following command(s):\n\n"
+  def execute_commands(movie, filename)
+    genre          = movie.genres.first
+    title_and_year = movie.imdb_title + " " + movie.year
+    ext            = File.extname(filename)
+    path           = File.dirname(filename)
 
-      genre_dir      = File.join(path, genre)
-      movie_filename = [File.join(genre_dir, clean(title_and_year)), rating].join(" - ") + ext
-      cmds           = []
-      cmds << "mkdir -p '#{genre_dir}'"
-      cmds << "mv '#{filename}' '#{movie_filename}'"
-      puts cmds.join("\n")
-      puts "\n\nExecute? (y/n)"
-      response = STDIN.gets.strip.downcase
-      if response == 'y'
-        cmds.each{|cmd| `#{cmd}`}
-      end
+    genre_dir      = File.join(path, genre)
+    new_filename   = [File.join(genre_dir, clean(title_and_year)), movie.rating].join(" - ") + ext
+    cmds           = []
+    cmds << "$ mkdir -p '#{genre_dir}'"
+    cmds << "$ mv '#{filename}' '#{new_filename}'"
+    puts "Moving file '#{File.basename(filename)}' --> '#{new_filename.split("/")[-2..-1].join("/")}'"
+
+    puts "\nExecute? (y/n)"
+    response = STDIN.gets.strip.downcase
+    if response == 'y'
+      cmds.each { |cmd| `#{cmd}` }
     end
   end
 
@@ -65,10 +57,6 @@ class FilenameParser
   def get_movie(filename)
     title, year = normalize_name(File.basename(filename))
     if title
-#      puts "Movie title: '#{title}' (Enter to accept, enter value to change, 'n' to skip movie)"
-#      users_title = STDIN.gets
-#      next if users_title.strip == "n"
-#      title = users_title.strip == '' ? title : users_title.strip
       begin
         return ImdbMovie.new(title, year)
       rescue ArgumentError => e
@@ -81,6 +69,11 @@ class FilenameParser
 
 end
 
+
+#      puts "Movie title: '#{title}' (Enter to accept, enter value to change, 'n' to skip movie)"
+#      users_title = STDIN.gets
+#      next if users_title.strip == "n"
+#      title = users_title.strip == '' ? title : users_title.strip
 
 #
 #          puts "Genre: '#{genre}' (Enter to accept, enter value to change)"
