@@ -29,6 +29,7 @@ class GenrePicker
 
 
   def order(genres)
+    return [] if !genres
     h = {}
     genres.each do |genre|
       index = GENRE_PRIORITY.index(genre)

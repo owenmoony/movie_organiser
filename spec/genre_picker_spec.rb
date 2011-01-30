@@ -78,4 +78,12 @@ describe "genre picker" do
     GenrePicker.new.order(["Action", "Sci-Fi"]).first.should == "Sci-Fi"
   end
 
+  it "should work when there is only genre" do
+    GenrePicker.new.order(["Sci-Fi"]).first.should == "Sci-Fi"
+  end
+
+  it "should work when given nil" do
+    GenrePicker.new.order(nil).should == []
+  end
+
 end

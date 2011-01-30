@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0aa238e-edef-4220-b30c-1c0a9cb45ea9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/genre_picker_spec.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/filename_parser.rb" afterPath="$PROJECT_DIR$/lib/filename_parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/genre_picker.rb" afterPath="$PROJECT_DIR$/lib/genre_picker.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/genre_picker_spec.rb" afterPath="$PROJECT_DIR$/spec/genre_picker_spec.rb" />
     </list>
     <ignored path="movie_organiser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,16 +40,16 @@
       <file leaf-file-name="file_parser_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/file_parser_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="101" vertical-scroll-proportion="0.0">
+            <state line="20" column="5" selection-start="885" selection-end="885" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filename_parser.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="filename_parser.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/filename_parser.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="25" selection-start="50" selection-end="50" vertical-scroll-proportion="0.017621145">
+            <state line="5" column="18" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -58,16 +58,16 @@
       <file leaf-file-name="genre_picker.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/genre_picker.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="12" selection-start="361" selection-end="366" vertical-scroll-proportion="0.0">
+            <state line="31" column="18" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="genre_picker_spec.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="genre_picker_spec.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/genre_picker_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="26" selection-start="1445" selection-end="1467" vertical-scroll-proportion="0.0">
+            <state line="85" column="31" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.8443804">
               <folding />
             </state>
           </provider>
@@ -143,9 +143,9 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/imdb_movie.rb" />
         <option value="$PROJECT_DIR$/spec/file_parser_spec.rb" />
+        <option value="$PROJECT_DIR$/lib/filename_parser.rb" />
         <option value="$PROJECT_DIR$/lib/genre_picker.rb" />
         <option value="$PROJECT_DIR$/spec/genre_picker_spec.rb" />
-        <option value="$PROJECT_DIR$/lib/filename_parser.rb" />
       </list>
     </option>
   </component>
@@ -551,13 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/file_parser_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="101" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/run.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="42" selection-start="74" selection-end="74" vertical-scroll-proportion="0.0">
@@ -565,23 +558,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/filename_parser.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="18" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/file_parser_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="5" selection-start="885" selection-end="885" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/genre_picker.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="12" selection-start="361" selection-end="366" vertical-scroll-proportion="0.0">
+        <state line="31" column="18" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/genre_picker_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="26" selection-start="1445" selection-end="1467" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/filename_parser.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="25" selection-start="50" selection-end="50" vertical-scroll-proportion="0.017621145">
+        <state line="85" column="31" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.8443804">
           <folding />
         </state>
       </provider>
