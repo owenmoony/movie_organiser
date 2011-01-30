@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0aa238e-edef-4220-b30c-1c0a9cb45ea9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/genre_picker.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/genre_picker_spec.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/filename_parser.rb" afterPath="$PROJECT_DIR$/lib/filename_parser.rb" />
@@ -50,7 +49,7 @@
       <file leaf-file-name="filename_parser.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/filename_parser.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="43" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.6696035">
+            <state line="1" column="25" selection-start="50" selection-end="50" vertical-scroll-proportion="0.017621145">
               <folding />
             </state>
           </provider>
@@ -582,7 +581,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/filename_parser.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="43" selection-start="1181" selection-end="1181" vertical-scroll-proportion="0.6696035">
+        <state line="1" column="25" selection-start="50" selection-end="50" vertical-scroll-proportion="0.017621145">
           <folding />
         </state>
       </provider>

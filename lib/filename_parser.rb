@@ -1,4 +1,5 @@
 require 'lib/imdb_movie'
+require 'lib/genre_picker'
 
 class FilenameParser
 
