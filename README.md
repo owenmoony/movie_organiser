@@ -18,8 +18,8 @@ Description
 Will re-organise your movies directory in such a way:
 
 Babe 1995 720p XYZ/
-    Babe 1995 720p XYZ-etc.avi
-    readme.txt
+  Babe 1995 720p XYZ-etc.avi
+  readme.txt
 
 Devil.2010.DVDRip.XviD-Name.avi
 
@@ -27,10 +27,10 @@ Devil.2010.DVDRip.XviD-Name.avi
 To:
 
 Adventure/
-    Babe (1995) - 7.2/
+  Babe (1995) - 7.2/
         ...
 Horror/
-    Devil (2010) - 6.5.avi
+  Devil (2010) - 6.5.avi
 
 
 Where 'Adventure', 'Horror' is the genre from imdb and '7.2', '6.5' is the imdb user rating.
