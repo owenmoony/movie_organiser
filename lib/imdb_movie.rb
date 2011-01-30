@@ -38,7 +38,6 @@ class ImdbMovie
     if imdb_search_page?(xml)
       puts "Found the search page, finding the imdb page on the results, please wait..."
       movie_url = xml.xpath("//*[contains(a, '#{@title}')]").xpath('.//a').first['href']
-      debugger
       if !movie_url || movie_url.include?('find?q=')
         movie_url = xml.xpath("//*[contains(a, '#{@title[0..3]}')]").xpath('.//a').first['href']
       end
@@ -47,7 +46,6 @@ class ImdbMovie
     end
 
     puts "Found page: #{xml.xpath("//title").text}"
-    debugger
     xml
   end
 

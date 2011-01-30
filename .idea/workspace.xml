@@ -54,7 +54,7 @@
       <file leaf-file-name="imdb_movie.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/imdb_movie.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="5" selection-start="1904" selection-end="1904" vertical-scroll-proportion="0.8894009">
+            <state line="48" column="7" selection-start="1545" selection-end="1545" vertical-scroll-proportion="0.5391705">
               <folding />
             </state>
           </provider>
@@ -559,7 +559,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/imdb_movie.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="5" selection-start="1904" selection-end="1904" vertical-scroll-proportion="0.8894009">
+        <state line="48" column="7" selection-start="1545" selection-end="1545" vertical-scroll-proportion="0.5391705">
           <folding />
         </state>
       </provider>
