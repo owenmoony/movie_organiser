@@ -51,19 +51,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="imdb_movie.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="imdb_movie.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/imdb_movie.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="66" selection-start="564" selection-end="564" vertical-scroll-proportion="0.119887166">
+            <state line="25" column="5" selection-start="664" selection-end="664" vertical-scroll-proportion="-5.3703704">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="README" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="64" selection-start="256" selection-end="256" vertical-scroll-proportion="-7.111111">
+            <state line="22" column="76" selection-start="346" selection-end="346" vertical-scroll-proportion="0.37235543">
               <folding />
             </state>
           </provider>
@@ -98,10 +98,10 @@
         <option value="$PROJECT_DIR$/out.txt" />
         <option value="$PROJECT_DIR$/imdb.html" />
         <option value="$PROJECT_DIR$/lib/run.rb" />
-        <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/spec/file_parser_spec.rb" />
         <option value="$PROJECT_DIR$/lib/filename_parser.rb" />
         <option value="$PROJECT_DIR$/lib/imdb_movie.rb" />
+        <option value="$PROJECT_DIR$/README" />
       </list>
     </option>
   </component>
@@ -528,13 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="64" selection-start="256" selection-end="256" vertical-scroll-proportion="-7.111111">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/run.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="42" selection-start="74" selection-end="74" vertical-scroll-proportion="-1.3333334">
@@ -558,7 +551,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/imdb_movie.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="66" selection-start="564" selection-end="564" vertical-scroll-proportion="0.119887166">
+        <state line="25" column="5" selection-start="664" selection-end="664" vertical-scroll-proportion="-5.3703704">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="76" selection-start="346" selection-end="346" vertical-scroll-proportion="0.37235543">
           <folding />
         </state>
       </provider>
