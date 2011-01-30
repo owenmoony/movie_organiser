@@ -4,7 +4,8 @@ require 'lib/imdb_movie'
 class FilenameParser
 
   def normalize_name(filename)
-    match = filename.match(/(.*)([\.|\s|\(][0-9]{4}[\s|\|\.)])/)
+    match = filename.match(/(.*)([\.|\s|\(][0-9]{4}[\.|\s|\)])/)
+    match = filename.match(/(.*)([\.|\s|\(][0-9]{4}[\.|\s|\)]*)/) if !match
     return [nil, nil] unless match
     title = match[1]
     year  = match[2]
@@ -41,25 +42,33 @@ class FilenameParser
       ext            = File.extname(filename)
       path           = File.dirname(filename)
 
-      puts "About to enter the following command(s):"
+      puts "About to enter the following command(s):\n\n"
 
       genre_dir      = File.join(path, genre)
-      movie_filename = [File.join(genre_dir, title_and_year), rating].join(" - ") + ext
+      movie_filename = [File.join(genre_dir, clean(title_and_year)), rating].join(" - ") + ext
       cmds           = []
       cmds << "mkdir -p '#{genre_dir}'"
       cmds << "mv '#{filename}' '#{movie_filename}'"
       puts cmds.join("\n")
+      puts "\n\nExecute? (y/n)"
+      response = STDIN.gets.strip.downcase
+      if response == 'y'
+        cmds.each{|cmd| `#{cmd}`}
+      end
     end
   end
 
+  def clean(title)
+    title.gsub(/\:|\*|`|%|\$|'|,|\?|:/, '')
+  end
 
   def get_movie(filename)
     title, year = normalize_name(File.basename(filename))
     if title
-      puts "Movie title: '#{title}' (Enter to accept, enter value to change, 'n' to skip movie)"
-      users_title = STDIN.gets
-      next if users_title.strip == "n"
-      title = users_title.strip == '' ? title : users_title.strip
+#      puts "Movie title: '#{title}' (Enter to accept, enter value to change, 'n' to skip movie)"
+#      users_title = STDIN.gets
+#      next if users_title.strip == "n"
+#      title = users_title.strip == '' ? title : users_title.strip
       begin
         return ImdbMovie.new(title, year)
       rescue ArgumentError => e

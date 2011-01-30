@@ -37,16 +37,20 @@ class ImdbMovie
     xml  = Nokogiri.parse(html.downcase)
     if imdb_search_page?(xml)
       puts "Found the search page, finding the imdb page on the results, please wait..."
-      movie_url = xml.xpath("//*[contains(a, '#{@title}')]").xpath('.//a').first['href']
-      if !movie_url || movie_url.include?('find?q=')
-        movie_url = xml.xpath("//*[contains(a, '#{@title[0..3]}')]").xpath('.//a').first['href']
+      uri_path = movie_uri_path(xml, @title)
+      if !uri_path || uri_path.include?('find?q=')
+        uri_path = movie_uri_path(xml, @title[0..3])
       end
-      html = get(URI.join("http://www.imdb.com", movie_url))
+      html = get(URI.join("http://www.imdb.com", uri_path))
       xml  = Nokogiri.parse(html.downcase)
     end
-
     puts "Found page: #{xml.xpath("//title").text}"
     xml
+  end
+
+  def movie_uri_path(xml, title)
+    anchor_tags = xml.xpath("//td[contains(a, '#{title}')]")
+    return anchor_tags.first.xpath(".//a").first['href'] if !anchor_tags.empty?
   end
 
   def imdb_search_page?(xml)
