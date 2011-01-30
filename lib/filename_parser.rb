@@ -40,8 +40,8 @@ class FilenameParser
     genre_dir      = File.join(path, genre)
     new_filename   = [File.join(genre_dir, clean(title_and_year)), movie.rating].join(" - ") + ext
     cmds           = []
-    cmds << "$ mkdir -p '#{genre_dir}'"
-    cmds << "$ mv '#{filename}' '#{new_filename}'"
+    cmds << "mkdir -p '#{genre_dir}'"
+    cmds << "mv '#{filename}' '#{new_filename}'"
     puts "Moving file '#{File.basename(filename)}' --> '#{new_filename.split("/")[-2..-1].join("/")}'"
 
     puts "\nExecute? (y/n)"
