@@ -38,13 +38,16 @@ class ImdbMovie
     if imdb_search_page?(xml)
       puts "Found the search page, finding the imdb page on the results, please wait..."
       movie_url = xml.xpath("//*[contains(a, '#{@title}')]").xpath('.//a').first['href']
-      unless movie_url
+      debugger
+      if !movie_url || movie_url.include?('find?q=')
         movie_url = xml.xpath("//*[contains(a, '#{@title[0..3]}')]").xpath('.//a').first['href']
       end
       html = get(URI.join("http://www.imdb.com", movie_url))
       xml  = Nokogiri.parse(html.downcase)
     end
+
     puts "Found page: #{xml.xpath("//title").text}"
+    debugger
     xml
   end
 
@@ -65,7 +68,7 @@ class ImdbMovie
   end
 
   def titlecase(sentence)
-    sentence.gsub(/\b\w/){$&.upcase}
+    sentence.gsub(/\b\w/){$&.upcase} if sentence
   end
 
 end
