@@ -33,6 +33,7 @@ class GenrePicker
     h = {}
     genres.each do |genre|
       index = GENRE_PRIORITY.index(genre)
+      index = !index ? 1000 : index
       h.merge!(index => genre)
     end
     h.to_a.sort {|a,b| a[0]<=>b[0]}.collect{|a,b| b}

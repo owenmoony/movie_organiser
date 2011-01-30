@@ -86,4 +86,8 @@ describe "genre picker" do
     GenrePicker.new.order(nil).should == []
   end
 
+  it "should work for an unknown genre" do
+    GenrePicker.new.order(["Short", "Drama"]).should =~ ["Drama", "Short"]
+  end
+
 end
