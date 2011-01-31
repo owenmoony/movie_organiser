@@ -65,7 +65,7 @@ class MovieOrganiser
   end
 
   def clean(title)
-    title.gsub(/\:|\*|`|%|\$|\'|,|\?|:/, '')
+    title.gsub(/\&|\:|\*|`|%|\$|\'|,|\?|:/, '')
   end
 
   def get_movie(filename)
