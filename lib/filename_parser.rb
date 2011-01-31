@@ -6,9 +6,8 @@ class FilenameParser
     return [nil, nil] unless match
     title = match[1]
     year = match[2]
-    year = year.include?("(") ? year : "(#{year.strip})"
-    year = year.gsub(".", "") if year.include?(".")
-    title = title.gsub(".", " ") if title.include?(".")
+    year = year.gsub(/\(|\)|\./, '')
+    title = title.gsub(".", " ") 
     [title.strip, year.strip]
   end
 

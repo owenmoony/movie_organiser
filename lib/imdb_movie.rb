@@ -8,53 +8,37 @@ class ImdbMovie
   attr_reader :year
 
   def initialize(title, year)
-    @title = title.downcase
-    @year  = year
-    @page  = find_movie_page
-    raise ArgumentError.new("Movie not found in imdb with args: #{@title} #{@year}") unless imdb_title
+    @movie  = find_movie_page(title, year)
+    raise ArgumentError.new("Movie not found in imdb with args: #{@title} #{@year}") unless title
   end
 
   def genres
-    nodes  = @page.xpath("//a[contains(@href,'genre')]")
-    values = nodes.map(&:values)
-    genres = values.flatten.find_all { |g| g =~ /^\/genre\/.*/ }.uniq
-    return genres.collect { |e| titlecase(e.gsub(/\/genre\//, '')) }
+    @movie['Genre'].split(",")
   end
 
   def rating
-    @page.xpath("//span[@class='rating-rating']").text.split("/").first
+    @movie['Rating']
   end
 
-  def imdb_title
-    titlecase(@page.xpath("//h1[@class='header']").inner_text.strip.split("\n").first)
+  def title
+    @movie['Title']
+  end
+
+  def year
+    @movie['Year']
+  end
+
+  def tomato_rating
+    s = @movie['tomatoRating']
+    "N/A" == s ? nil : s
   end
 
   private
 
-  def find_movie_page
-    puts "searching imdb for '#{@title} #{@year}', please wait..."
-    html = get("http://www.imdb.com/find?s=all&q=#{CGI.escape(@title + " " + @year)}")
-    xml  = Nokogiri.parse(html.downcase)
-    if imdb_search_page?(xml)
-      puts "Found the search page, finding the imdb page on the results, please wait..."
-      uri_path = movie_uri_path(xml, @title)
-      if !uri_path || uri_path.include?('find?q=')
-        uri_path = movie_uri_path(xml, @title[0..3])
-      end
-      html = get(URI.join("http://www.imdb.com", uri_path))
-      xml  = Nokogiri.parse(html.downcase)
-    end
-    puts "Found page: #{xml.xpath("//title").text}"
-    xml
-  end
-
-  def movie_uri_path(xml, title)
-    anchor_tags = xml.xpath("//td[contains(a, '#{title}')]")
-    return anchor_tags.first.xpath(".//a").first['href'] if !anchor_tags.empty?
-  end
-
-  def imdb_search_page?(xml)
-    xml.xpath("//title").text =~ /imdb [title|search]/
+  def find_movie_page(title, year)
+    puts "searching imdb for '#{title} #{year}', please wait..."
+    json = get("http://www.imdbapi.com/?t=#{CGI.escape(title)}&y=#{year}&tomatoes=true")
+    ActiveSupport::JSON.decode(json)
   end
 
   def get(uri)
@@ -67,10 +51,6 @@ class ImdbMovie
         return nil
       end
     end
-  end
-
-  def titlecase(sentence)
-    sentence.gsub(/\b\w/){$&.upcase} if sentence
   end
 
 end

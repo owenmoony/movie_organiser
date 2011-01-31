@@ -29,6 +29,7 @@ class MovieOrganiser
     if @movies.empty?
       log :error, "No movies to migrate?!"
     else
+      @always_execute = nil
       @movies.each do |movie|
         execute_shell_commands(movie[:imdb], movie[:filename])
       end
@@ -39,21 +40,26 @@ class MovieOrganiser
 
   def execute_shell_commands(movie, filename)
     genre = GenrePicker.order(movie.genres).first
-    title_and_year = movie.imdb_title + " " + movie.year
+
     ext = File.extname(filename)
-    path = File.dirname(filename)
+    movie_filename = "#{clean(movie.title)} (#{movie.year}) (#{movie.rating}-#{movie.tomato_rating})#{ext}"
 
-    genre_dir = File.join(path, genre)
-    new_filename = [File.join(genre_dir, clean(title_and_year)), movie.rating].join(" - ") + ext
+    path = File.join(File.dirname(filename), genre)
+    movie_fullpath = File.join(path, movie_filename)
+
     cmds = []
-    cmds << "mkdir -p '#{genre_dir}'"
-    cmds << "mv '#{filename}' '#{new_filename}'"
-    puts "Moving file '#{File.basename(filename)}' --> '#{new_filename.split("/")[-2..-1].join("/")}'"
+    cmds << "mkdir -p '#{path}'"
+    cmds << "mv '#{filename}' '#{movie_fullpath}'"
+    puts "Moving file '#{File.basename(filename)}' --> '#{movie_fullpath.split("/")[-2..-1].join("/")}'"
 
-    log :question, "Execute? (y/n)"
-    response = STDIN.gets.strip.downcase
-    if response == 'y'
-      cmds.each { |cmd| `#{cmd}` }
+    unless @always_execute
+      log :question, "Execute? (y/n/a)"
+      response = STDIN.gets.strip.downcase
+      @always_yes = response == 'a'
+    end
+
+    if response == 'y' || @always_execute
+      #cmds.each { |cmd| `#{cmd}` }
     end
   end
 
