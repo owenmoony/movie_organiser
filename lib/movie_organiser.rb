@@ -38,7 +38,7 @@ class MovieOrganiser
   private
 
   def execute_shell_commands(movie, filename)
-    genre = GenrePicker.new.order(movie.genres).first
+    genre = GenrePicker.order(movie.genres).first
     title_and_year = movie.imdb_title + " " + movie.year
     ext = File.extname(filename)
     path = File.dirname(filename)
@@ -67,10 +67,11 @@ class MovieOrganiser
       begin
         return ImdbMovie.new(title, year)
       rescue ArgumentError => e
+        log :error, "Movie could not be found in imdb. Try changing the filename and year to match imdb."
         return nil
       end
     else
-      puts "Could not parse file '#{File.basename(filename)}'... normalize_name failed."
+      log :error, "Could not parse file '#{File.basename(filename)}'... normalize_name failed."
     end
   end
 

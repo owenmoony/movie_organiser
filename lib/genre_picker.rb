@@ -28,7 +28,7 @@ class GenrePicker
       "Talk-Show"]
 
 
-  def order(genres)
+  def self.order(genres)
     return [] if !genres
     h = {}
     genres.each do |genre|
