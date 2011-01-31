@@ -40,6 +40,7 @@ class MovieOrganiser
   private
 
   def execute_shell_commands(movie, filename)
+    puts "running commands for #{movie} - #{filename}"
     genre = GenrePicker.order(movie.genres).first
 
     ext = File.extname(filename)

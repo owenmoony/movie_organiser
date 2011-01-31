@@ -30,4 +30,8 @@ describe "genre picker" do
     GenrePicker.order(["AAA", "Drama"]).should =~ ["Drama", "AAA"]
   end
 
+  it "should work for an unknown genre and it's the only one" do
+    GenrePicker.order(["AAA"]).should =~ ["AAA"]
+  end
+
 end
