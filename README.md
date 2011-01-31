@@ -10,7 +10,8 @@ To Run
 ------
 
     $ rake migrate_movies[your_movies_directory]
-    (include the square brackets)
+
+(include the square brackets)
 
 
 Description
