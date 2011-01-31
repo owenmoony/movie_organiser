@@ -16,6 +16,7 @@ describe "file parser" do
 
   it "should match when when there is not date" do
     FilenameParser.normalize_name("shrek the third").should == ["shrek the third", nil]
+    FilenameParser.normalize_name("shrek the third.avi").should == ["shrek the third", nil]
   end
 
 end
