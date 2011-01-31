@@ -1,5 +1,3 @@
-
-
 class FilenameParser
 
   def self.normalize_name(filename)

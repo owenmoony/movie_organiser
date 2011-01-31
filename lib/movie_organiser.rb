@@ -14,7 +14,7 @@ class MovieOrganiser
     @movies = []
     @files.each do |filename|
       movie = {}
-      log :info, "\n\nProcessing file: '#{File.basename(filename)}'"
+      log :info, "\nProcessing file: '#{File.basename(filename)}'"
       movie[:imdb] = get_movie(filename)
       movie[:filename] = filename
       if !movie[:imdb]

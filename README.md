@@ -9,7 +9,8 @@ Installation
 To Run
 ------
 
-    $ ruby lib/run.rb your_movies_directory
+    $ rake migrate_movies[your_movies_directory]
+    (include the square brackets)
 
 
 Description
