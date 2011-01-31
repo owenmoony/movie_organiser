@@ -9,7 +9,7 @@ class ImdbMovie
 
   def initialize(title, year)
     @movie  = find_movie_page(title, year)
-    raise ArgumentError.new("Movie not found in imdb with args: #{@title} #{@year}") if title.blank?
+    raise ArgumentError.new("Movie not found in imdb with args: #{@title} #{@year}") if @movie['Title'].blank?
   end
 
   def genres
