@@ -37,7 +37,9 @@ class ImdbMovie
 
   def find_movie_page(title, year)
     puts "searching imdb for '#{title} #{year}', please wait..."
-    json = get("http://www.imdbapi.com/?t=#{CGI.escape(title)}&y=#{year}&tomatoes=true")
+    url = "http://www.imdbapi.com/?t=#{CGI.escape(title)}&tomatoes=true"
+    url += "&y=#{year}" if !year.blank?
+    json = get(url)
     ActiveSupport::JSON.decode(json)
   end
 
