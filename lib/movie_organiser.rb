@@ -13,6 +13,7 @@ class MovieOrganiser
   def find_movies
     @movies = []
     @files.each do |filename|
+      next if GenrePicker::GENRE_PRIORITY.include?(File.basename(filename))
       movie = {}
       log :info, "\nProcessing file: '#{File.basename(filename)}'"
       movie[:imdb] = get_movie(filename)
@@ -59,12 +60,12 @@ class MovieOrganiser
     end
 
     if response == 'y' || @always_execute
-      #cmds.each { |cmd| `#{cmd}` }
+      cmds.each { |cmd| `#{cmd}` }
     end
   end
 
   def clean(title)
-    title.gsub(/\:|\*|`|%|\$|'|,|\?|:/, '')
+    title.gsub(/\:|\*|`|%|\$|\'|,|\?|:/, '')
   end
 
   def get_movie(filename)
