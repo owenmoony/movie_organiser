@@ -14,4 +14,8 @@ describe "file parser" do
     FilenameParser.normalize_name("shrek 2001").should == ["shrek", "2001"]
   end
 
+  it "should match when when there is not date" do
+    FilenameParser.normalize_name("shrek the third").should == ["shrek the third", nil]
+  end
+
 end
