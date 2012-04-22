@@ -41,7 +41,7 @@ class MovieOrganiser
 
   def execute_shell_commands(movie, filename)
     puts "running commands for #{movie} - #{filename}"
-    genre = GenrePicker.order(movie.genres).first
+    genre = GenrePicker.order(movie.genres)
 
     ext = File.extname(filename)
     movie_filename = "#{clean(movie.title)} (#{movie.year}) (#{movie.rating}-#{movie.tomato_rating})#{ext}"
